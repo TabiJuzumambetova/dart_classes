@@ -1,48 +1,146 @@
 
+import 'dart:io';
 import 'dart:math';
 
 void main() {
-  //1
-  Circle a =Circle(color: "red", r: 50);
-  print(a.color);
-  print(a.r);
+  print("Добро пожаловать! \n Здесь  задания заданные в 23.10 по классам Жузумамбетовой Табихат.Пожалуйста выберите задание которое хотите проверить \n 1)Круг\n 2)Студент\n 3)Автомобиль\n 4)Книга\n 5)Прямоугольник\n 6)Банковский счет \n 7)Товар \n 8)Сотрудник\n 9)Треугольник\n ");
+  String ans ="";
 
+  do {
+    try{
+    int choose =int.tryParse(stdin.readLineSync()??"")??0;
+  if(choose>=10){
+    print("Введите число от 1 до 9 ");
 
-//2
-  // ignore: non_constant_identifier_names
-  Student Tabi =Student(age: 19, name: "tabi", middleScore: [5,3,5,4,4,5,5]);
+  }else{
+    switch(choose){
+    case 1:
+    print("Создайте класс Circle, у которого есть свойства радиус и цвет. Реализуйте методы для получения этих свойств.\nРешение:");
+    Circle a =Circle(color: "red", r: 50);
+  print("Цвет:${a.color}");
+  print("Радиус:${a.r}");
+  break;
+  case 2:
+    print("Создайте класс Studen, у которого есть свойства имя, возраст и средний балл. Реализуйте методы для получения  этих свойств.\nРешение:");
+    // ignore: non_constant_identifier_names
+    Student Tabi =Student(age: 19, name: "tabi", middleScore: [5,3,5,4,4,5,5]);
   Tabi.printAll();
-
-
-  //3
-  // ignore: non_constant_identifier_names
-  Car HondaFit=Car(marka: "honda", model: "fit", year: 2003);
+  break;
+  case 3:
+    print("Создайте класс Car, у которого есть свойства марка, модель и год выпуска. Реализуйте методы для получения  этих свойств.\nРешение:");
+    // ignore: non_constant_identifier_names
+    Car HondaFit=Car(marka: "honda", model: "fit", year: 2003);
   HondaFit.printAll2();
-
-  //4
-  Book luck = Book(name: "Luck", author: "F.Yummy", year: 1997);
+  break;
+  case 4:
+    print("Создайте класc Book, у которого есть свойства название, автор и год издания. Реализуйте методы для получения этих свойств.\nРешение:");
+    // ignore: non_constant_identifier_names
+    Book luck = Book(name: "Luck", author: "F.Yummy", year: 1997);
   luck.printAll3();
-
-  //5
-  Rectangle a2=Rectangle(h: 100, w: 200);
+  break;
+  case 5:
+    print("Создайте класс Rectangle, у которого есть свойства ширина и высота. Реализуйте методы для получения  этих свойств, а также методы для вычисления площади и периметра.\nРешение:");
+    // ignore: non_constant_identifier_names
+    Rectangle a2=Rectangle(h: 100, w: 200);
   a2.sumP2();
   a2.sumS2();
+  break;
+  case 6:
+   
+  break;
+  case 7:
+    print("Создайте класс Product, у которого есть свойства название, цена и количество. Реализуйте методы для получения этих свойств, а также метод для вычисления общей стоимости товара (умножение цены на количество).\nРешение:");
+    // ignore: non_constant_identifier_names
+   Product milk =Product(name: "milk", price: 80,count: 2);
+  milk.printProduct();
+  break;
+  case 8:
+    print("Создайте класс Employee, у которого есть свойства имя, должность и зарплата. Реализуйте методы для получения этих свойств, а также метод для увеличения зарплаты на определенный процент.\nРешение:");
+    // ignore: non_constant_identifier_names
+   Employee im=Employee(name:"Tabi", position: "boss", year: 8, salary: 100);
+  im.printEmployee();
+  break;
+   case 9:
+    print("Создайте класс Triangle, у которого есть свойства длина сторон. Реализуйте методы для получения этих свойств, а также метод для вычисления площади треугольника по формуле Герона.\nРешение:");
+    // ignore: non_constant_identifier_names
+   Triangle x=Triangle(a: 10, b: 10, c: 10);
+  print( "Вычисления площади треугольника по формуле Герона ${x.TriangleS()}");
+  break;
+
+
+  }
+
+  }
+  print("s - Заверщить программу\nEnter-Продолжить ");
+  ans=stdin.readLineSync()??"";
+
+  }catch(e){
+    print(e);
+  }
+    
+  } while (ans!="s");
+  
+  
+  // switch(choose){
+  //   case 1:
+  //   print("Создайте класс Circle, у которого есть свойства радиус и цвет. Реализуйте методы для получения этих свойств.\nРешение:");
+  //   Circle a =Circle(color: "red", r: 50);
+  // print("Цвет:${a.color}");
+  // print("Радиус:${a.r}");
+  // break;
+  // case 2:
+  //   print("Создайте класс Studen, у которого есть свойства имя, возраст и средний балл. Реализуйте методы для получения  этих свойств.\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //   Student Tabi =Student(age: 19, name: "tabi", middleScore: [5,3,5,4,4,5,5]);
+  // Tabi.printAll();
+  // break;
+  // case 3:
+  //   print("Создайте класс Car, у которого есть свойства марка, модель и год выпуска. Реализуйте методы для получения  этих свойств.\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //   Car HondaFit=Car(marka: "honda", model: "fit", year: 2003);
+  // HondaFit.printAll2();
+  // break;
+  // case 4:
+  //   print("Создайте класc Book, у которого есть свойства название, автор и год издания. Реализуйте методы для получения этих свойств.\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //   Book luck = Book(name: "Luck", author: "F.Yummy", year: 1997);
+  // luck.printAll3();
+  // break;
+  // case 5:
+  //   print("Создайте класс Rectangle, у которого есть свойства ширина и высота. Реализуйте методы для получения  этих свойств, а также методы для вычисления площади и периметра.\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //   Rectangle a2=Rectangle(h: 100, w: 200);
+  // a2.sumP2();
+  // a2.sumS2();
+  // break;
+  // case 6:
+   
+  // break;
+  // case 7:
+  //   print("Создайте класс Product, у которого есть свойства название, цена и количество. Реализуйте методы для получения этих свойств, а также метод для вычисления общей стоимости товара (умножение цены на количество).\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //  Product milk =Product(name: "milk", price: 80,count: 2);
+  // milk.printProduct();
+  // break;
+  // case 8:
+  //   print("Создайте класс Employee, у которого есть свойства имя, должность и зарплата. Реализуйте методы для получения этих свойств, а также метод для увеличения зарплаты на определенный процент.\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //  Employee im=Employee(name:"Tabi", position: "boss", year: 8, salary: 100);
+  // im.printEmployee();
+  // break;
+  //  case 9:
+  //   print("Создайте класс Triangle, у которого есть свойства длина сторон. Реализуйте методы для получения этих свойств, а также метод для вычисления площади треугольника по формуле Герона.\nРешение:");
+  //   // ignore: non_constant_identifier_names
+  //  Triangle x=Triangle(a: 10, b: 10, c: 10);
+  // print( "Вычисления площади треугольника по формуле Герона ${x.TriangleS()}");
+  // break;
+
+
+  // }
+  
   
 
-  //6
-  Product milk =Product(name: "milk", price: 80,count: 2);
-  milk.printProduct();
-
-
-  //7
-  Employee im=Employee(name:"Tabi", position: "boss", year: 8, salary: 100);
-  im.printEmployee();
-
-  //8
-  Triangle x=Triangle(a: 10, b: 10, c: 10);
-  print( "Вычисления площади треугольника по формуле Герона ${x.TriangleS()}");
-
-
+  
 }
 class Circle{
   String color;
@@ -61,7 +159,7 @@ class Student{
   List<int> middleScore=[];
   Student({required this.age,required this.name,required this.middleScore});
   void printAll(){
-    print("$name,$age,${summScore()}");
+    print("Имя:$name\nВозраст:$age\nСредняя оценка:${summScore()}");
   }
   double summScore(){
     int summ=0;
@@ -96,10 +194,10 @@ class Rectangle{
   double h;
   Rectangle({required this.h,required this.w});
   void sumP2(){
- print( (h+w)*2);
+ print("Периметр: ${(h+w)*2}");
   }
   void sumS2(){
-  print(h*w);
+  print("Площадь: ${h*w}");
 
   }
 }
